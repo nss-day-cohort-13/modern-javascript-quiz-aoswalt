@@ -1,0 +1,26 @@
+{
+  "name": "robot-battledome",
+  "version": "1.0.0",
+  "description": "## Setup",
+  "main": "gulp-gauntlet.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nss-day-cohort-13/modern-javascript-quiz-aoswalt.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nss-day-cohort-13/modern-javascript-quiz-aoswalt/issues"
+  },
+  "homepage": "https://github.com/nss-day-cohort-13/modern-javascript-quiz-aoswalt#readme",
+  "devDependencies": {
+    "del": "^2.2.0",
+    "gulp-sass-lint": "^1.1.1",
+    "jshint-stylish": "^2.2.0",
+    "run-sequence": "^1.2.1"
+  }
+}
