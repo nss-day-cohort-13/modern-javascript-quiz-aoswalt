@@ -20,7 +20,7 @@ module.exports = {
         "indent": ["error", 2],
         "new-parens": "warn",
         "no-fallthrough": "warn",
-        "no-magic-numbers": "warn",
+        "no-magic-numbers": ["error", {"ignore": [0, 1, 2]}],
         "no-spaced-func": "warn",
         "no-unneeded-ternary": "warn",
         "no-whitespace-before-property": "error",

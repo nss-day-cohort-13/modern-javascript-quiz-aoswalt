@@ -9,17 +9,17 @@ describe("Battledome", function() {
     });
   });
 
-  xdescribe("Factory", function() {
+  describe("Factory", function() {
     it("should exist", function() {
       expect(Battledome.Factory).toBeDefined();
     });
 
-    xdescribe("Robot", function() {
+    describe("Robot", function() {
       it("should exist", function() {
         expect(Battledome.Factory.Robot).toBeDefined();
       });
 
-      xdescribe("isAlive", function() {
+      describe("isAlive", function() {
         it("should exist", function() {
           expect(Battledome.Factory.Robot.prototype.isAlive).toBeDefined();
         });
@@ -32,7 +32,7 @@ describe("Battledome", function() {
         });
       });
 
-      xdescribe("attack", function() {
+      describe("attack", function() {
         it("should exist", function() {
           expect(Battledome.Factory.Robot.prototype.attack).toBeDefined();
         });
