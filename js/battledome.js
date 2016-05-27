@@ -1,23 +1,22 @@
+/* eslint-disable no-console */
 "use strict";
 
 /* eslint-disable no-var */
 var Battledome = (function(battle) {
 /* eslint-enable no-var */
-  battle.Factory = {};
+  const bot1 = new battle.Factory.Robot();
+  const bot2 = new battle.Factory.Robot();
 
-  battle.Factory.Robot = function() {
-    this.health = 100;
-    this.damage = 20;
+  let stillFighting = false;
+
+  battle.fight = function() {
+    if(stillFighting) { stillFighting = bot1.attack(bot2); }
+    if(stillFighting) { stillFighting = bot2.attack(bot1); }
+
+    return stillFighting;
   };
-
-  battle.Factory.Robot.prototype.isAlive = function() {
-    return this.health > 0;
-  };
-
-  battle.Factory.Robot.prototype.attack = function(enemy) {
-    enemy.health -= this.damage;
-  };
-
 
   return battle;
 }(Battledome || {}));
+
+Battledome.Factory.listBots(bot => console.log("New", new Battledome.Factory[bot]()));

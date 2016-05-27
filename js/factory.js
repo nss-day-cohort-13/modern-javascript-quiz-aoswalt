@@ -1,3 +1,4 @@
+/* global getVariedInt:false */
 "use strict";
 
 /* eslint-disable no-var */
@@ -7,15 +8,17 @@ var Battledome = (function(battle) {
 
   const botList = [];
 
-  battle.Factory.loadBots = callback => botList.forEach(b => callback(b));
+  battle.Factory.listBots = callback => botList.forEach(b => callback(b));
 
 
   //NOTE(adam): base robot class
   battle.Factory.Robot = function() {
     this.label = "Robot";
-    this.baseHealth = 100;
-    this.health = 100;
-    this.damage = 20;
+    this.healthBase = 100;
+    this.healthVary = 0;
+    this.health = getVariedInt(this.healthBase, this.healthVary);
+    this.damageBase = 20;
+    this.damageVary = 0;
   };
 
   battle.Factory.Robot.prototype.isAlive = function() {
@@ -23,80 +26,62 @@ var Battledome = (function(battle) {
   };
 
   battle.Factory.Robot.prototype.attack = function(enemy) {
-    enemy.health -= this.damage;
+    enemy.health -= getVariedInt(this.damageBase, this.damageVary);
     return enemy.health > 0;
   };
 
   //NOTE(adam): drone type and subclasses
   battle.Factory.Drone = function() {
     this.label = "Drone";
-
   };
-  battle.Factory.Drone.prototype = Object.create(battle.Factory.Robot.prototype);
-  battle.Factory.Drone.constructor = battle.Factory.Drone;
+  battle.Factory.Drone.prototype = new battle.Factory.Robot();
 
   battle.Factory.QuadCopter = function() {
     this.label = `QuadCopter ${this.label}`;
-
   };
-  battle.Factory.QuadCopter.prototype = Object.create(battle.Factory.Drone.prototype);
-  battle.Factory.QuadCopter.constructor = battle.Factory.QuadCopter;
+  battle.Factory.QuadCopter.prototype = new battle.Factory.Drone();
   botList.push("QuadCopter");
 
   battle.Factory.HexBlade = function() {
     this.label = `HexBlade ${this.label}`;
-
   };
-  battle.Factory.HexBlade.prototype = Object.create(battle.Factory.Drone.prototype);
-  battle.Factory.HexBlade.constructor = battle.Factory.HexBlade;
+  battle.Factory.HexBlade.prototype = new battle.Factory.Drone();
   botList.push("HexBlade");
 
   //NOTE(adam): bipedal type and subclasses
   battle.Factory.Bipedal = function() {
     this.label = "Bipedal";
-
   };
-  battle.Factory.Bipedal.prototype = Object.create(battle.Factory.Robot.prototype);
-  battle.Factory.Bipedal.constructor = battle.Factory.Bipedal;
+  battle.Factory.Bipedal.prototype = new battle.Factory.Robot();
 
   battle.Factory.AtSt = function() {
     this.label = `AT-ST ${this.label}`;
-
   };
-  battle.Factory.AtSt.prototype = Object.create(battle.Factory.Bipedal.prototype);
-  battle.Factory.AtSt.constructor = battle.Factory.AtSt;
+  battle.Factory.AtSt.prototype = new battle.Factory.Bipedal();
   botList.push("AtSt");
 
   battle.Factory.T800 = function() {
     this.label = `T-800 ${this.label}`;
-
   };
-  battle.Factory.T800.prototype = Object.create(battle.Factory.Bipedal.prototype);
-  battle.Factory.T800.constructor = battle.Factory.T800;
+  battle.Factory.T800.prototype = new battle.Factory.Bipedal();
   botList.push("T800");
 
   //NOTE(adam): atv type and subclasses
   battle.Factory.Atv = function() {
     this.label = "ATV";
-
   };
-  battle.Factory.Atv.prototype = Object.create(battle.Factory.Robot.prototype);
-  battle.Factory.Atv.constructor = battle.Factory.Atv;
+  battle.Factory.Atv.prototype = new battle.Factory.Robot();
 
   battle.Factory.Rover = function() {
     this.label = `Rover ${this.label}`;
-
   };
-  battle.Factory.Rover.prototype = Object.create(battle.Factory.Atv.prototype);
-  battle.Factory.Rover.constructor = battle.Factory.Rover;
+  battle.Factory.Rover.prototype = new battle.Factory.Atv();
   botList.push("Rover");
 
   battle.Factory.Maximus = function() {
     this.label = `Maximus ${this.label}`;
-
   };
-  battle.Factory.Maximus.prototype = Object.create(battle.Factory.Atv.prototype);
-  battle.Factory.Maximus.constructor = battle.Factory.Maximus;
+  battle.Factory.Maximus.prototype = new battle.Factory.Atv();
   botList.push("Maximus");
 
 
