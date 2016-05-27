@@ -3,7 +3,7 @@ describe("Battledome", function() {
     expect(Battledome).toBeDefined();
   });
 
-  xdescribe("fight", function() {
+  describe("fight", function() {
     it("should exist", function() {
       expect(Battledome.fight).toBeDefined();
     });
@@ -42,54 +42,54 @@ describe("Battledome", function() {
         });
       });
 
-      xdescribe("Drone", function() {
+      describe("Drone", function() {
         it("should exist", function() {
           expect(Battledome.Factory.Drone).toBeDefined();
         });
 
-        xdescribe("QuadCopter", function() {
+        describe("QuadCopter", function() {
           it("should exist", function() {
             expect(Battledome.Factory.QuadCopter).toBeDefined();
           });
         });
 
-        xdescribe("HexBlade", function() {
+        describe("HexBlade", function() {
           it("should exist", function() {
             expect(Battledome.Factory.HexBlade).toBeDefined();
           });
         });
       });
 
-      xdescribe("Bipedal", function() {
+      describe("Bipedal", function() {
         it("should exist", function() {
           expect(Battledome.Factory.Bipedal).toBeDefined();
         });
 
-        xdescribe("AtSt", function() {
+        describe("AtSt", function() {
           it("should exist", function() {
             expect(Battledome.Factory.AtSt).toBeDefined();
           });
         });
 
-        xdescribe("T800", function() {
+        describe("T800", function() {
           it("should exist", function() {
             expect(Battledome.Factory.T800).toBeDefined();
           });
         });
       });
 
-      xdescribe("ATV", function() {
+      describe("ATV", function() {
         it("should exist", function() {
           expect(Battledome.Factory.Atv).toBeDefined();
         });
 
-        xdescribe("Rover", function() {
+        describe("Rover", function() {
           it("should exist", function() {
             expect(Battledome.Factory.Rover).toBeDefined();
           });
         });
 
-        xdescribe("Maximus", function() {
+        describe("Maximus", function() {
           it("should exist", function() {
             expect(Battledome.Factory.Maximus).toBeDefined();
           });
