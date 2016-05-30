@@ -7,6 +7,74 @@
   <link rel="stylesheet" href="quiz.css">
 </head>
 <body>
+  <div class="container">
+    <h1>Robot Battledome</h1>
+
+    <div class="setup">
+      <table class="entry bot1">
+        <tr>
+          <td>Name</td>
+          <td><input type="text" class="name"></td>
+        </tr>
+        <tr>
+          <td>Type</td>
+          <td><select id="" class="type"></select></td>
+        </tr>
+      </table>
+
+      <table class="entry bot2">
+        <tr>
+          <td>Name</td>
+          <td><input type="text" class="name"></td>
+        </tr>
+        <tr>
+          <td>Type</td>
+          <td><select id="" class="type"></select></td>
+        </tr>
+      </table>
+
+      <input type="button" class="confirm" value="Confirm">
+    </div>
+
+    <div class="combat">
+      <table class="stats bot1">
+        <thead>
+          <tr>
+            <th colspan="2" class="name"></th>
+          <tr>
+          </tr>
+            <th colspan="2" class="type"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="label">HP</td>
+            <td class="hp"></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table class="stats bot2">
+        <thead>
+          <tr>
+            <th colspan="2" class="name"></th>
+          <tr>
+          </tr>
+            <th colspan="2" class="type"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="label">HP</td>
+            <td class="hp"></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <input type="button" class="attack" value="Attack">
+    </div>
+
+  </div>
 
   <script src="/js/util.js" type="text/javascript"></script>
   <script src="/js/factory.js" type="text/javascript"></script>
