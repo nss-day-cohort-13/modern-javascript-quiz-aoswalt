@@ -1,2 +1,21 @@
+* {
+  font-family: sans-serif; }
+
+.container {
+  display: inline-block; }
+
 h1 {
-  color: #152235; }
+  color: #152235;
+  text-align: center; }
+
+.entry,
+.stats {
+  display: inline-block; }
+
+.confirm,
+.attack {
+  display: block;
+  margin: 0 auto; }
+
+.combat {
+  display: none; }

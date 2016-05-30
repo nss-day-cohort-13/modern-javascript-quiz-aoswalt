@@ -1,5 +1,29 @@
 $title-color: #152235;
 
+* {
+  font-family: sans-serif;
+}
+
+.container {
+  display: inline-block;
+}
+
 h1 {
   color: $title-color;
+  text-align: center;
+}
+
+.entry,
+.stats {
+  display: inline-block;
+}
+
+.confirm,
+.attack {
+  display: block;
+  margin: 0 auto;
+}
+
+.combat {
+  display: none;
 }
