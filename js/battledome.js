@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 "use strict";
 
 /* eslint-disable no-var */
@@ -18,5 +17,3 @@ var Battledome = (function(battle) {
 
   return battle;
 }(Battledome || {}));
-
-Battledome.Factory.listBots(bot => console.log("New", new Battledome.Factory[bot]()));
