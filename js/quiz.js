@@ -1,6 +1,10 @@
 "use strict";
 
 (function() {
+  //NOTE(adam): put bot types into select elements
+  Battledome.Factory.listBots(bot =>
+    $(".setup .type").append(`<option value="${bot}">${bot}</option>`));
+
   $(".confirm").click(() => {
     $(".setup").hide();
     $(".combat").show();
@@ -11,5 +15,3 @@
     $(".setup").show();
   });
 })();
-
-// Battledome.Factory.listBots(bot => console.log("New", new Battledome.Factory[bot]()));
