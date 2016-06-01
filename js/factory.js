@@ -19,7 +19,7 @@ var Battledome = (function(battle) {
     this.healthVary = 0;
     this.health = getVariedInt(this.healthBase, this.healthVary);
     this.damageBase = 20;
-    this.damageVary = 0;
+    this.damageVary = 5;
   };
 
   battle.Factory.Robot.prototype.isAlive = function() {
@@ -28,7 +28,7 @@ var Battledome = (function(battle) {
 
   battle.Factory.Robot.prototype.attack = function(enemy) {
     enemy.health -= getVariedInt(this.damageBase, this.damageVary);
-    return enemy.health > 0;
+    return enemy.isAlive();
   };
 
   //NOTE(adam): drone type and subclasses

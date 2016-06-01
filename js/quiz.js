@@ -37,7 +37,9 @@
   });
 
   $(".attack").click(() => {
-    $(".combat").hide();
-    $(".setup").show();
+    Battledome.fight();
+
+    // $(".combat").hide();
+    // $(".setup").show();
   });
 })();

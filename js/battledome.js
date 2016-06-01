@@ -11,6 +11,7 @@ var Battledome = (function(battle) {  // eslint-disable-line no-var
   battle.initialize = function(input, displayClosure) {
     bot1 = new battle.Factory[input.bot1.type](input.bot1.name);
     bot2 = new battle.Factory[input.bot2.type](input.bot2.name);
+    stillFighting = true;
 
     displayBot1 = displayClosure(1);
     displayBot2 = displayClosure(2);
