@@ -19,11 +19,16 @@ h1 {
 }
 
 .confirm,
-.attack {
+.attack,
+.restart {
   display: block;
   margin: 0 auto;
 }
 
 .combat {
+  display: none;
+}
+
+.done {
   display: none;
 }
