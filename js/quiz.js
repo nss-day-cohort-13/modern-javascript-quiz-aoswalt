@@ -37,9 +37,14 @@
   });
 
   $(".attack").click(() => {
-    Battledome.fight();
+    if(!Battledome.fight()) {
+      $(".done").show();
+      $(".result").html("Combat complete!");
+    }
+  });
 
-    // $(".combat").hide();
-    // $(".setup").show();
+  $(".restart").click(() => {
+    $(".combat").hide();
+    $(".setup").show();
   });
 })();
