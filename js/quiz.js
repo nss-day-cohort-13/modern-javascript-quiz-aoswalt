@@ -30,11 +30,10 @@
     $(".setup").hide();
     $(".combat").show();
 
-    const bots = Battledome.initialize({
+    Battledome.initialize({
       bot1: { name: $(".bot1 .name").val(), type: $(".bot1 .type").val() },
       bot2: { name: $(".bot2 .name").val(), type: $(".bot2 .type").val() }
-    });
-
+    }, populateStats);
   });
 
   $(".attack").click(() => {
