@@ -29,6 +29,7 @@
   $(".confirm").click(() => {
     $(".setup").hide();
     $(".combat").show();
+    $(".attack").show();
 
     Battledome.initialize({
       bot1: { name: $(".bot1 .name").val(), type: $(".bot1 .type").val() },
@@ -39,6 +40,7 @@
   $(".attack").click(() => {
     const result = Battledome.fight();
     if(!result.stillFighting) {
+      $(".attack").hide();
       $(".done").show();
       $(".result").html("Combat complete!");
     }
