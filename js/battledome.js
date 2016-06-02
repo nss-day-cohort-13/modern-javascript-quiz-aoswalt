@@ -29,7 +29,19 @@ var Battledome = (function(battle) {  // eslint-disable-line no-var
     if(stillFighting) { stillFighting = bot2.attack(bot1); }
 
     battle.updateDisplay();
-    return stillFighting;
+    return {
+      stillFighting,
+      bot1: {
+        alive: bot1.isAlive(),
+        name: bot1.name,
+        label: bot1.label
+      },
+      bot2: {
+        alive: bot2.isAlive(),
+        name: bot2.name,
+        label: bot2.label
+      }
+    };
   };
 
   return battle;

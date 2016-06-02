@@ -37,7 +37,8 @@
   });
 
   $(".attack").click(() => {
-    if(!Battledome.fight()) {
+    const result = Battledome.fight();
+    if(!result.stillFighting) {
       $(".done").show();
       $(".result").html("Combat complete!");
     }
