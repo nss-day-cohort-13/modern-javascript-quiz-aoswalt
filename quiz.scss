@@ -4,18 +4,24 @@ $title-color: #152235;
   font-family: sans-serif;
 }
 
-.container {
-  display: inline-block;
-}
-
-h1 {
+h1,
+h3 {
   color: $title-color;
   text-align: center;
 }
 
-.entry,
-.stats {
+.setup,
+.combat {
+  text-align: center;
+}
+
+table {
   display: inline-block;
+  text-align: left;
+}
+
+thead {
+  text-align: center;
 }
 
 .confirm,

@@ -20,9 +20,9 @@
   function populateStats(botNum) {
     const num = botNum;
     return function(botData) {
-      $(`.stats.bot${num} .name`).html(botData.name);
-      $(`.stats.bot${num} .type`).html(botData.label);
-      $(`.stats.bot${num} .health`).html(botData.health);
+      $(`.stats .bot${num} .name`).html(botData.name);
+      $(`.stats .bot${num} .type`).html(botData.label);
+      $(`.stats .bot${num} .health`).html(botData.health);
     };
   }
 
@@ -42,7 +42,17 @@
     if(!result.stillFighting) {
       $(".attack").hide();
       $(".done").show();
-      $(".result").html("Combat complete!");
+
+      let victor = null;
+      let loser = null;
+      if(result.bot1.alive) {
+        victor = result.bot1;
+        loser = result.bot2;
+      } else {
+        victor = result.bot2;
+        loser = result.bot1;
+      }
+      $(".result").html(`${victor.name} - ${victor.label} has defeated ${loser.name} - ${loser.label}!`);
     }
   });
 

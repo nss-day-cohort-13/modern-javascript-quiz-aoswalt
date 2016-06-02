@@ -1,16 +1,21 @@
 * {
   font-family: sans-serif; }
 
-.container {
-  display: inline-block; }
-
-h1 {
+h1,
+h3 {
   color: #152235;
   text-align: center; }
 
-.entry,
-.stats {
-  display: inline-block; }
+.setup,
+.combat {
+  text-align: center; }
+
+table {
+  display: inline-block;
+  text-align: left; }
+
+thead {
+  text-align: center; }
 
 .confirm,
 .attack,
